@@ -1,7 +1,7 @@
+import { MyText, SafeView } from "@elements/SharedElements";
 import type { NextPage } from "next";
 import Head from "next/head";
-import Page from "../components/Content/Page";
-import styles from "../styles/Home.module.css";
+import Page from "../app/components/Page";
 
 const Home: NextPage = () => {
 	return (
@@ -17,15 +17,17 @@ const Home: NextPage = () => {
 
 			<Page />
 
-			<footer className={styles.footer}>
-				<a
-					href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Powered by Our Company
-				</a>
-			</footer>
+			<SafeView>
+				<footer className="flex flex-col justify-center py-8 px-0 items-center">
+					<a
+						href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<MyText>Powered by Our Company</MyText>
+					</a>
+				</footer>
+			</SafeView>
 		</>
 	);
 };

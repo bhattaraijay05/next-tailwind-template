@@ -1,3 +1,4 @@
+import { HoverView, MyText, SafeView } from "@elements/SharedElements";
 import { Popover, Transition } from "@headlessui/react";
 import {
 	ChartBarIcon,
@@ -37,9 +38,9 @@ function classNames(...classes: any) {
 export default function Header() {
 	const [openSolution, setOpenSolution] = useState(false);
 	return (
-		<Popover className="relative bg-purple-700 ">
+		<Popover className="sticky bg-purple-700 dark:bg-black top-0">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6">
-				<div className="flex justify-between items-center border-gray-100 py-6 md:py-2 md:justify-start md:space-x-10">
+				<div className="flex justify-between items-center border-gray-100 py-6 md:py-4 md:justify-start md:space-x-10">
 					<div className="flex justify-start lg:w-0 lg:flex-1">
 						<a href="#">
 							<p className="font-bold text-2xl text-white">
@@ -48,7 +49,7 @@ export default function Header() {
 						</a>
 					</div>
 					<div className="-mr-2 -my-2 md:hidden">
-						<Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none  ">
+						<Popover.Button className="bg-purple-700 dark:bg-black rounded-md p-2 inline-flex items-center justify-center text-white hover:text-gray-500 hover:bg-gray-100 focus:outline-none  ">
 							<span className="sr-only">Open menu</span>
 							<MenuIcon className="h-6 w-6" aria-hidden="true" />
 						</Popover.Button>
@@ -67,7 +68,7 @@ export default function Header() {
 									<Popover.Button
 										className={classNames(
 											"text-white",
-											"group bg-purple-700 rounded-md inline-flex items-center text-base font-medium focus:outline-none "
+											"group bg-purple-700 dark:bg-black rounded-md inline-flex items-center text-base font-medium focus:outline-none "
 										)}
 									>
 										<span>Header</span>
@@ -91,32 +92,38 @@ export default function Header() {
 										leaveTo="opacity-0 translate-y-1"
 									>
 										<Popover.Panel className="absolute z-10 -ml-4 mt-3 transform px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
-											<div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
-												<div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
+											<SafeView className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
+												<SafeView className="relative grid gap-6 px-5 py-6 sm:gap-8 sm:p-8">
 													{solutions.map((item) => (
-														<a
+														<HoverView
+															className="-m-3 p-3"
 															key={item.name}
-															href={item.href}
-															className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50"
 														>
-															<item.icon
-																className="flex-shrink-0 h-6 w-6 text-indigo-600"
-																aria-hidden="true"
-															/>
-															<div className="ml-4">
-																<p className="text-base font-medium text-gray-900">
-																	{item.name}
-																</p>
-																<p className="mt-1 text-sm text-gray-500">
-																	{
-																		item.description
-																	}
-																</p>
-															</div>
-														</a>
+															<a
+																href={item.href}
+																className=" flex items-start"
+															>
+																<item.icon
+																	className="flex-shrink-0 h-6 w-6 text-indigo-600 "
+																	aria-hidden="true"
+																/>
+																<div className="ml-4">
+																	<MyText className="text-base font-medium ">
+																		{
+																			item.name
+																		}
+																	</MyText>
+																	<MyText className="mt-1 font-small">
+																		{
+																			item.description
+																		}
+																	</MyText>
+																</div>
+															</a>
+														</HoverView>
 													))}
-												</div>
-											</div>
+												</SafeView>
+											</SafeView>
 										</Popover.Panel>
 									</Transition>
 								</>
@@ -125,13 +132,13 @@ export default function Header() {
 
 						<a
 							href="#"
-							className="text-base font-medium text-white "
+							className="text-base font-medium text-white border-b-2 transition-all duration-500  hover:border-b-2 dark:hover:border-gray-50 border-purple-700 hover:border-gray-50 dark:border-gray-900"
 						>
 							Header
 						</a>
 						<a
 							href="#"
-							className="text-base font-medium text-white "
+							className="text-base font-medium text-white border-b-2 transition-all  hover:border-b-2 duration-500 dark:hover:border-gray-50 border-purple-700 hover:border-gray-50 dark:border-gray-900"
 						>
 							Header
 						</a>
@@ -178,10 +185,10 @@ export default function Header() {
 			>
 				<Popover.Panel
 					focus
-					className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
+					className="absolute top-0 inset-x-0 p-4 transition transform origin-top-right md:hidden bg-purple-700 dark:bg-black"
 				>
-					<div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
-						<div className="pt-5 pb-6 px-5">
+					<SafeView className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5  divide-y-2 divide-gray-50">
+						<SafeView className="pt-5 pb-6 px-5">
 							<div className="flex items-center justify-between">
 								<div>
 									<img
@@ -191,7 +198,7 @@ export default function Header() {
 									/>
 								</div>
 								<div className="-mr-2">
-									<Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+									<Popover.Button className="bg-white dark:bg-black rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none ">
 										<span className="sr-only">
 											Close menu
 										</span>
@@ -205,24 +212,28 @@ export default function Header() {
 							<div className="mt-6">
 								<nav className="grid gap-y-8">
 									{solutions.map((item) => (
-										<a
+										<HoverView
+											className="-m-3 p-3"
 											key={item.name}
-											href={item.href}
-											className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
 										>
-											<item.icon
-												className="flex-shrink-0 h-6 w-6 text-indigo-600"
-												aria-hidden="true"
-											/>
-											<span className="ml-3 text-base font-medium text-gray-900">
-												{item.name}
-											</span>
-										</a>
+											<a
+												href={item.href}
+												className=" flex items-start"
+											>
+												<item.icon
+													className="flex-shrink-0 h-6 w-6 text-indigo-600"
+													aria-hidden="true"
+												/>
+												<MyText className="ml-3">
+													{item.name}
+												</MyText>
+											</a>
+										</HoverView>
 									))}
 								</nav>
 							</div>
-						</div>
-					</div>
+						</SafeView>
+					</SafeView>
 				</Popover.Panel>
 			</Transition>
 		</Popover>

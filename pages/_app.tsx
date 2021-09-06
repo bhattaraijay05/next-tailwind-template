@@ -1,8 +1,26 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import "tailwindcss/tailwind.css";
-import Header from "../components/Header/Header";
 import { useEffect, useState } from "react";
+import Header from "../app/components/Header/Header";
+
+export const toggleTheme = () => {
+	if (localStorage.theme === undefined) {
+		localStorage.theme = "dark";
+	}
+	localStorage.theme === "light"
+		? (localStorage.theme = "dark")
+		: (localStorage.theme = "light");
+	if (
+		localStorage.theme === "dark" ||
+		(!("theme" in localStorage) &&
+			window.matchMedia("(prefers-color-scheme: dark)").matches)
+	) {
+		document.documentElement.classList.add("dark");
+	} else {
+		document.documentElement.classList.remove("dark");
+	}
+};
 
 function MyApp({ Component, pageProps }: AppProps) {
 	const [isVisible, setIsVisible] = useState<boolean>(false);
@@ -12,6 +30,18 @@ function MyApp({ Component, pageProps }: AppProps) {
 			behavior: "smooth",
 		});
 	};
+
+	useEffect(() => {
+		if (
+			localStorage.theme === "dark" ||
+			(!("theme" in localStorage) &&
+				window.matchMedia("(prefers-color-scheme: dark)").matches)
+		) {
+			document.documentElement.classList.add("dark");
+		} else {
+			document.documentElement.classList.remove("dark");
+		}
+	}, []);
 
 	useEffect(() => {
 		const toggleVisibility = () => {
@@ -24,6 +54,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 		window.addEventListener("scroll", toggleVisibility);
 		return () => window.removeEventListener("scroll", toggleVisibility);
 	}, []);
+
 	return (
 		<>
 			<div>
