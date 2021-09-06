@@ -13,6 +13,6 @@ yarn dev
 ## Demo
 
 <div>
-  <img src="https://github.com/bhattaraijay05/testproject/blob/main/images/1.jpg" alt="1" >
-  <img src="https://github.com/bhattaraijay05/testproject/blob/main/images/1.jpg" alt="1" >
+  <img src="https://github.com/bhattaraijay05/testproject/blob/main/images/1.png" alt="1" >
+  <img src="https://github.com/bhattaraijay05/testproject/blob/main/images/2.png" alt="2" >
 </div>
