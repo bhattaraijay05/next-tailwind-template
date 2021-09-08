@@ -1,7 +1,11 @@
-import { MyText, SafeView } from "@elements/SharedElements";
+import About from "@components/About/About";
+import Carousel from "@components/Carousel/Carousel";
+import Footer from "@components/Footer/Footer";
+import HeaderImage from "@components/Header/HeaderImage";
+import Intro from "@components/Intro/Intro";
+import OurWork from "@components/OurWork/OurWork";
 import type { NextPage } from "next";
 import Head from "next/head";
-import Page from "../app/components/Page";
 
 const Home: NextPage = () => {
 	return (
@@ -14,20 +18,12 @@ const Home: NextPage = () => {
 				/>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-
-			<Page />
-
-			<SafeView>
-				<footer className="flex flex-col justify-center py-8 px-0 items-center">
-					<a
-						href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						<MyText>Powered by Our Company</MyText>
-					</a>
-				</footer>
-			</SafeView>
+			<HeaderImage />
+			<Intro />
+			<Carousel />
+			<OurWork />
+			<About />
+			<Footer />
 		</>
 	);
 };

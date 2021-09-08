@@ -8,7 +8,7 @@ import {
 	XIcon,
 } from "@heroicons/react/outline";
 import { ChevronDownIcon } from "@heroicons/react/solid";
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 
 const solutions = [
 	{
@@ -37,10 +37,27 @@ function classNames(...classes: any) {
 
 export default function Header() {
 	const [openSolution, setOpenSolution] = useState(false);
+
+	useEffect(() => {
+		var prevScrollpos = window.pageYOffset;
+		window.onscroll = function () {
+			var currentScrollPos = window.pageYOffset;
+			if (prevScrollpos > currentScrollPos) {
+				document.getElementById("navbar")!.style.top = "0";
+			} else {
+				document.getElementById("navbar")!.style.top = "-100px";
+			}
+			prevScrollpos = currentScrollPos;
+		};
+	}, []);
+
 	return (
-		<Popover className="sticky bg-purple-700 dark:bg-black top-0">
+		<Popover
+			className="sticky bg-purple-700 transition-all duration-300 dark:bg-black top-0 z-10 "
+			id="navbar"
+		>
 			<div className="max-w-7xl mx-auto px-4 sm:px-6">
-				<div className="flex justify-between items-center border-gray-100 py-6 md:py-4 md:justify-start md:space-x-10">
+				<div className="flex justify-between items-center border-gray-100 py-5 md:py-3 md:justify-start md:space-x-10">
 					<div className="flex justify-start lg:w-0 lg:flex-1">
 						<a href="#">
 							<p className="font-bold text-2xl text-white">
@@ -49,7 +66,7 @@ export default function Header() {
 						</a>
 					</div>
 					<div className="-mr-2 -my-2 md:hidden">
-						<Popover.Button className="bg-purple-700 dark:bg-black rounded-md p-2 inline-flex items-center justify-center text-white hover:text-gray-500 hover:bg-gray-100 focus:outline-none  ">
+						<Popover.Button className=" dark:bg-black rounded-md p-2 inline-flex items-center justify-center text-white hover:text-gray-500 hover:bg-gray-100 focus:outline-none  ">
 							<span className="sr-only">Open menu</span>
 							<MenuIcon className="h-6 w-6" aria-hidden="true" />
 						</Popover.Button>
@@ -68,7 +85,7 @@ export default function Header() {
 									<Popover.Button
 										className={classNames(
 											"text-white",
-											"group bg-purple-700 dark:bg-black rounded-md inline-flex items-center text-base font-medium focus:outline-none "
+											"group  dark:bg-black rounded-md inline-flex items-center text-base font-medium focus:outline-none "
 										)}
 									>
 										<span>Header</span>
@@ -185,7 +202,7 @@ export default function Header() {
 			>
 				<Popover.Panel
 					focus
-					className="absolute top-0 inset-x-0 p-4 transition transform origin-top-right md:hidden bg-purple-700 dark:bg-black"
+					className="absolute top-0 inset-x-0 p-4 transition transform origin-top-right md:hidden rounded-lg"
 				>
 					<SafeView className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5  divide-y-2 divide-gray-50">
 						<SafeView className="pt-5 pb-6 px-5">

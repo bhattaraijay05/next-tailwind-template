@@ -1,5 +1,12 @@
 interface CustomElementProps {
 	className?: string;
 	children: React.ReactNode;
-	style?: React.CSSProperties;
+	style?: any;
+}
+interface CustomTextProps {
+	className?: string;
+	children: React.ReactNode;
+	style?: any;
+	title?: boolean;
+	justify?: boolean;
 }

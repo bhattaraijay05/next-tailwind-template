@@ -10,7 +10,7 @@ const SafeView: React.FC<CustomElementProps> = ({
 	return (
 		<div
 			className={classNames(
-				"bg-white dark:bg-black transition-all  duration-500 ease-in-out",
+				"bg-white dark:bg-black transition-all",
 				className
 			)}
 			style={style}
@@ -20,18 +20,21 @@ const SafeView: React.FC<CustomElementProps> = ({
 	);
 };
 
-const MyText: React.FC<CustomElementProps> = ({
+const MyText: React.FC<CustomTextProps> = ({
 	children,
 	className,
 	style,
+	title,
+	justify,
 }) => {
 	return (
 		<p
 			className={classNames(
-				"text-black dark:text-white text-lg transition-all duration-500 ease-in-out",
-				className
+				"text-black dark:text-white text-lg",
+				className,
+				justify && "text-justify"
 			)}
-			style={style}
+			style={{ fontSize: title ? 34 : 18, ...style }}
 		>
 			{children}
 		</p>
