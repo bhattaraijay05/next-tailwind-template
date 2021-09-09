@@ -20,16 +20,11 @@ cd '/pages/api'
 <div style="display:flex; flex-direction:row; flex-wrap:wrap">
   <img src="https://github.com/bhattaraijay05/testproject/blob/main/images/1.png" alt="1" width="300">
   <img src="https://github.com/bhattaraijay05/testproject/blob/main/images/1d.png" alt="1d"width="300">
-
-<img src="https://github.com/bhattaraijay05/testproject/blob/main/images/2.png" alt="2"width="300">
-<img src="https://github.com/bhattaraijay05/testproject/blob/main/images/2d.png" alt="2d"width="300">
-
-<img src="https://github.com/bhattaraijay05/testproject/blob/main/images/3.png" alt="3"width="300">
-<img src="https://github.com/bhattaraijay05/testproject/blob/main/images/3d.png" alt="3d"width="300">
-
-<img src="https://github.com/bhattaraijay05/testproject/blob/main/images/4.png" alt="4"width="300">
-
-<img src="https://github.com/bhattaraijay05/testproject/blob/main/images/5.png" alt="5"width="300">
-<img src="https://github.com/bhattaraijay05/testproject/blob/main/images/5d.png" alt="5d"width="300">
-
+  <img src="https://github.com/bhattaraijay05/testproject/blob/main/images/2.png" alt="2"width="300">
+  <img src="https://github.com/bhattaraijay05/testproject/blob/main/images/2d.png" alt="2d"width="300">
+  <img src="https://github.com/bhattaraijay05/testproject/blob/main/images/3.png" alt="3"width="300">
+  <img src="https://github.com/bhattaraijay05/testproject/blob/main/images/3d.png" alt="3d"width="300">
+  <img src="https://github.com/bhattaraijay05/testproject/blob/main/images/4.png" alt="4"width="300">
+  <img src="https://github.com/bhattaraijay05/testproject/blob/main/images/5.png" alt="5"width="300">
+  <img src="https://github.com/bhattaraijay05/testproject/blob/main/images/5d.png" alt="5d"width="300">
 </div>
