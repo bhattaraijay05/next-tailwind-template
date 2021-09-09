@@ -5,14 +5,14 @@ import WorkChart from "./WorkChart";
 const OurWork = () => {
 	return (
 		<div>
-			<SafeView className="px-8 py-4 lg:px-60">
+			<SafeView className="px-1 py-4 lg:px-60">
 				<MyText title className="py-7">
 					Our Work
 				</MyText>
 				<MyText
 					justify
-					className="pl-5 pr-5 tracking-wider"
-					style={{ fontFamily: "sans-serif", fontWeight: "200" }}
+					className="px-2 tracking-wider"
+					style={{ fontFamily: "sans-serif" }}
 				>
 					Lorem ipsum dolor sit, amet consectetur adipisicing elit.
 					Officiis suscipit tenetur ipsa placeat fuga doloribus

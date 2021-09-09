@@ -1,12 +1,17 @@
 import { MyText, SafeView } from "@elements/SharedElements";
-import React from "react";
-
-const data = Array(6).fill({
-	title: "Project",
-	description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-});
+import React, { useEffect, useState } from "react";
 
 const WorkChart = () => {
+	const [data, setData] = useState([]);
+	useEffect(() => {
+		const fetchData = async () => {
+			const result = await fetch("/api/workchart");
+			const json = await result.json();
+			setData(json);
+		};
+		fetchData();
+	}, [data]);
+
 	return (
 		<SafeView>
 			<MyText title className="px-8 py-10 lg:px-60">
@@ -14,7 +19,7 @@ const WorkChart = () => {
 			</MyText>
 
 			<div className="flex items-center flex-row  py-10 flex-wrap">
-				{data.map((item, index) => (
+				{data.map((item: WorkChartProps, index) => (
 					<div
 						key={index}
 						className={
@@ -32,7 +37,12 @@ const WorkChart = () => {
 							>
 								{item.title} {index + 1}
 							</MyText>
-							<MyText>{item.description}</MyText>
+							<MyText
+								className=" tracking-wider mb-4"
+								style={{ fontFamily: "sans-serif" }}
+							>
+								{item.description}
+							</MyText>
 						</div>
 					</div>
 				))}

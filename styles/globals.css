@@ -52,16 +52,18 @@ a {
 }
 
 ::-webkit-scrollbar {
-	width: 0px;
+	width: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
 	background: rgb(212, 212, 212);
 	border-radius: 8px;
+	transition: all 0.3s ease-in-out;
 }
 
 ::-webkit-scrollbar-thumb:hover {
 	background: rgb(173, 173, 173);
+	transition: all 0.3s ease-in-out;
 }
 
 .carouselrow::-webkit-scrollbar {

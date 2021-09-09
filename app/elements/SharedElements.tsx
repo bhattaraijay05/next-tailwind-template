@@ -30,11 +30,15 @@ const MyText: React.FC<CustomTextProps> = ({
 	return (
 		<p
 			className={classNames(
-				"text-black dark:text-white text-lg",
+				"text-black dark:text-white text-sm md:text-base",
 				className,
-				justify && "text-justify"
+				justify && "md:text-justify",
+				title && "text-9xl"
 			)}
-			style={{ fontSize: title ? 34 : 18, ...style }}
+			style={{
+				fontSize: title ? 34 : "",
+				...style,
+			}}
 		>
 			{children}
 		</p>
