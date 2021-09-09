@@ -7,14 +7,30 @@ const Carousel = () => {
 			<div className="flex px-5 flex-row overflow-scroll carouselrow transition-all duration-500 ease-in-out">
 				{Array.from(Array(12).keys()).map((i) => (
 					<div key={i}>
+						<style jsx>
+							{`
+								.rotate {
+									--tw-rotate: 2deg;
+								}
+								.rotate:hover {
+									--tw-rotate: 0deg;
+								}
+							`}
+						</style>
 						<div
-							className="transform rotate-3 hover:rotate-0  transition-all duration-500 ease-in-out bg-red-700 mx-5 my-8  cursor-pointer hover:scale-110 "
+							className="transform rotate   transition-all duration-500 ease-in-out mx-5 my-8  cursor-pointer hover:scale-110 "
 							style={{
 								width: 200,
 								height: 200,
 								borderRadius: 10,
 							}}
-						></div>
+						>
+							<img
+								className="rounded-xl shadow-xl"
+								src="https://picsum.photos/200/200"
+								alt="carousel"
+							/>
+						</div>
 					</div>
 				))}
 			</div>

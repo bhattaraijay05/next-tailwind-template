@@ -58,12 +58,10 @@ a {
 ::-webkit-scrollbar-thumb {
 	background: rgb(212, 212, 212);
 	border-radius: 8px;
-	transition: all 0.3s ease-in-out;
 }
 
 ::-webkit-scrollbar-thumb:hover {
 	background: rgb(173, 173, 173);
-	transition: all 0.3s ease-in-out;
 }
 
 .carouselrow::-webkit-scrollbar {
@@ -74,7 +72,7 @@ a {
 }
 
 .parallax {
-	background-image: url("https://images.unsplash.com/photo-1467189386127-c4e5e31ee213?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&ixid=MnwxfDB8MXxyYW5kb218MHwxOTA3Mjd8fHx8fHx8MTYzMTAyMDc0OA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600");
+	background-image: url("https://images.unsplash.com/photo-1483918793747-5adbf82956c4?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&ixid=MnwxfDB8MXxyYW5kb218MHwxOTA3Mjd8fHx8fHx8MTYzMTE4MjEyNA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600");
 	min-height: 450px;
 	background-attachment: fixed;
 	background-position: center;
