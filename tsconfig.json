@@ -24,7 +24,10 @@
 			"@context/*": ["./context/*"],
 			"@helpers/*": ["./helpers/*"],
 			"@elements/*": ["./elements/*"],
-			"@utils/*": ["./utils/*"]
+			"@utils/*": ["./utils/*"],
+			"@shared/*": [
+				"./shared/*"
+			],
 		}
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
